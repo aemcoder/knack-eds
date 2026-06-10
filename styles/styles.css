@@ -38,8 +38,8 @@
   --heading-font-size-s: 22px;
   --heading-font-size-xs: 20px;
 
-  /* nav height */
-  --nav-height: 124px;
+  /* nav height (main nav row; announcement bar not included) */
+  --nav-height: 74px;
 }
 
 /* fallback fonts */

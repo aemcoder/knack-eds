@@ -13,3 +13,4 @@ helix-importer-ui
 !AGENTS.md
 drafts/home/import-work/*
 drafts/case-study/*/images/*
+.playwright-cli/
