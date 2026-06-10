@@ -1,0 +1,103 @@
+.image-compare .image-compare-frame {
+  --position: 50%;
+
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.image-compare .image-compare-after,
+.image-compare .image-compare-before {
+  pointer-events: none;
+}
+
+.image-compare .image-compare-after img,
+.image-compare .image-compare-before img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-compare .image-compare-before {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 calc(100% - var(--position)) 0 0);
+}
+
+.image-compare .image-compare-slider {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+.image-compare .image-compare-line {
+  position: absolute;
+  inset: 0;
+  left: var(--position);
+  z-index: 2;
+  width: 5px;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.image-compare .image-compare-handle {
+  position: absolute;
+  top: 50%;
+  left: var(--position);
+  z-index: 3;
+  width: 52px;
+  height: 52px;
+  background: var(--brand-purple, #982a86);
+  border: 4px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.image-compare .image-compare-slider:focus-visible ~ .image-compare-handle {
+  outline: 4px solid var(--brand-black, #101828);
+  outline-offset: 3px;
+}
+
+.image-compare .image-compare-handle::before,
+.image-compare .image-compare-handle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  margin-top: -8px;
+  border: 8px inset transparent;
+}
+
+.image-compare .image-compare-handle::before {
+  left: 50%;
+  margin-left: -21px;
+  border-right: 8px solid #fff;
+}
+
+.image-compare .image-compare-handle::after {
+  right: 50%;
+  margin-right: -21px;
+  border-left: 8px solid #fff;
+}
+
+@media (width >= 900px) {
+  .image-compare .image-compare-handle {
+    width: 62px;
+    height: 62px;
+    border-width: 5px;
+  }
+}
