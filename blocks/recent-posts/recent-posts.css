@@ -1,0 +1,34 @@
+.recent-posts {
+  font-size: var(--body-font-size-xs);
+}
+
+.recent-posts .recent-posts-title {
+  margin: 0 0 8px;
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  color: var(--brand-black);
+}
+
+.recent-posts .recent-posts-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recent-posts .recent-posts-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--brand-gray-white);
+}
+
+.recent-posts .recent-posts-list li:last-child {
+  border-bottom: none;
+}
+
+.recent-posts .recent-posts-list a {
+  color: var(--brand-black);
+  text-decoration: underline;
+}
+
+.recent-posts .recent-posts-list a:hover {
+  color: var(--brand-pink);
+}
