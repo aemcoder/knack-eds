@@ -1,0 +1,102 @@
+version: 1
+
+indices:
+  default:
+    include:
+      - '/**'
+    exclude:
+      - '/fragments/**'
+      - '/drafts/**'
+      - '/blog/**'
+      - '/video/**'
+      - '/templates/**'
+      - '/integrations/**'
+      - '/case-study/**'
+    target: /query-index.json
+    properties: &defaultProperties
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image"]
+        value: attribute(el, "content")
+      template:
+        select: head > meta[name="template"]
+        value: attribute(el, "content")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
+
+  blog:
+    include:
+      - '/blog/**'
+    target: /blog/query-index.json
+    properties:
+      <<: *defaultProperties
+      author:
+        select: head > meta[name="author"]
+        value: attribute(el, "content")
+      publication-date:
+        select: head > meta[name="publication-date"]
+        value: attribute(el, "content")
+      category:
+        select: head > meta[name="category"]
+        value: attribute(el, "content")
+      tags:
+        select: head > meta[name="tags"]
+        value: attribute(el, "content")
+
+  video:
+    include:
+      - '/video/**'
+    target: /video/query-index.json
+    properties:
+      <<: *defaultProperties
+      publication-date:
+        select: head > meta[name="publication-date"]
+        value: attribute(el, "content")
+      category:
+        select: head > meta[name="category"]
+        value: attribute(el, "content")
+
+  templates:
+    include:
+      - '/templates/**'
+    target: /templates/query-index.json
+    properties:
+      <<: *defaultProperties
+      industries:
+        select: head > meta[name="industries"]
+        value: attribute(el, "content")
+      use-cases:
+        select: head > meta[name="use-cases"]
+        value: attribute(el, "content")
+      app-tracks:
+        select: head > meta[name="app-tracks"]
+        value: attribute(el, "content")
+
+  integrations:
+    include:
+      - '/integrations/**'
+    target: /integrations/query-index.json
+    properties:
+      <<: *defaultProperties
+      category:
+        select: head > meta[name="category"]
+        value: attribute(el, "content")
+
+  case-studies:
+    include:
+      - '/case-study/**'
+    target: /case-study/query-index.json
+    properties:
+      <<: *defaultProperties
+      customer:
+        select: head > meta[name="customer"]
+        value: attribute(el, "content")
+      industry:
+        select: head > meta[name="industry"]
+        value: attribute(el, "content")
