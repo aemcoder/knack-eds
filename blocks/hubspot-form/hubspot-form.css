@@ -1,0 +1,98 @@
+.hubspot-form {
+  max-width: 640px;
+}
+
+.hubspot-form .hubspot-form-embed {
+  min-height: 120px;
+}
+
+.hubspot-form .hubspot-form-fallback {
+  padding: 24px;
+  border: 1px solid var(--brand-gray-white);
+  border-radius: 8px;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+}
+
+.hubspot-form .hubspot-form-fallback a {
+  color: var(--brand-purple);
+  font-weight: 600;
+}
+
+/* hubspot v2 embed (rendered in-page) */
+.hubspot-form .hs-form-field {
+  margin-bottom: 18px;
+}
+
+.hubspot-form .hs-form-field label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--brand-black);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hubspot-form .hs-input {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--brand-gray-white);
+  border-radius: 4px;
+  background-color: var(--background-color);
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.hubspot-form .hs-input:focus {
+  border-color: var(--brand-purple);
+  outline: 2px solid var(--brand-purple);
+  outline-offset: -1px;
+}
+
+.hubspot-form textarea.hs-input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.hubspot-form .hs-error-msgs {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--brand-dark-purple);
+  font-size: 13px;
+}
+
+.hubspot-form .hs-button {
+  padding: 12px 32px;
+  border: 2px solid var(--brand-pink);
+  border-radius: 4px;
+  background-color: var(--brand-pink);
+  color: var(--background-color);
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.hubspot-form .hs-button:hover {
+  border-color: var(--brand-dark-pink);
+  background-color: var(--brand-dark-pink);
+}
+
+.hubspot-form .hs-button:focus-visible {
+  outline: 2px solid var(--brand-purple);
+  outline-offset: 2px;
+}
+
+.hubspot-form .legal-consent-container,
+.hubspot-form .legal-consent-container p {
+  color: var(--brand-gray);
+  font-size: 12px;
+  line-height: 1.5;
+}

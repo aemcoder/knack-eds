@@ -1,0 +1,97 @@
+.consent-banner {
+  position: fixed;
+  inset: auto 16px 16px;
+  z-index: 100;
+}
+
+.consent-banner .consent-banner-card {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid var(--brand-gray-white);
+  border-radius: 8px;
+  background-color: var(--background-color);
+  box-shadow: 0 4px 24px rgb(16 24 40 / 18%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .consent-banner .consent-banner-card {
+    animation: consent-banner-slide-up 300ms ease-out;
+  }
+}
+
+@keyframes consent-banner-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.consent-banner .consent-banner-text {
+  margin: 0 0 16px;
+  color: var(--text-color);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.consent-banner .consent-banner-text a {
+  color: var(--brand-purple);
+  font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.consent-banner .consent-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.consent-banner button {
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.consent-banner button:focus-visible {
+  outline: 2px solid var(--brand-purple);
+  outline-offset: 2px;
+}
+
+.consent-banner .consent-banner-accept {
+  flex: 1;
+  border: 2px solid var(--brand-pink);
+  background-color: var(--brand-pink);
+  color: var(--background-color);
+}
+
+.consent-banner .consent-banner-accept:hover {
+  border-color: var(--brand-dark-pink);
+  background-color: var(--brand-dark-pink);
+}
+
+.consent-banner .consent-banner-decline {
+  border: 2px solid transparent;
+  background-color: transparent;
+  color: var(--brand-gray);
+}
+
+.consent-banner .consent-banner-decline:hover {
+  color: var(--brand-black);
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .consent-banner {
+    inset: auto auto 24px 24px;
+  }
+}
