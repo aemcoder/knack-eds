@@ -58,8 +58,8 @@ indices:
         select: head > meta[name="category"]
         value: attribute(el, "content")
       tags:
-        select: head > meta[name="tags"]
-        value: attribute(el, "content")
+        select: head > meta[property="article:tag"]
+        values: attribute(el, "content")
   video:
     include:
     - /video/**
