@@ -1,0 +1,46 @@
+/* purple-to-pink gradient rounded card; same gradient as .section.cta-banner */
+.cta {
+  border-radius: 24px;
+  padding: 48px 24px;
+  background: linear-gradient(90deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta .cta-content > * {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta h2,
+.cta h3 {
+  margin: 0 0 16px;
+  color: white;
+}
+
+.cta p {
+  margin: 0 0 16px;
+}
+
+.cta p.button-wrapper {
+  margin: 28px 0 0;
+}
+
+.cta a.button.primary {
+  border-color: white;
+  background-color: white;
+  color: var(--brand-purple);
+}
+
+.cta a.button.primary:hover,
+.cta a.button.primary:focus-visible {
+  border-color: var(--brand-light-pink);
+  background-color: var(--brand-light-pink);
+}
+
+@media (width >= 900px) {
+  .cta {
+    padding: 72px 48px;
+  }
+}
