@@ -211,7 +211,12 @@ export default async function decorate(block) {
   block.textContent = '';
 
   if (!source) return;
-  const items = await fetchIndex(source);
+  let items = await fetchIndex(source);
+  // optional pre-filter, e.g. `filter: template=download` — narrows a shared index
+  if (config.filter && config.filter.includes('=')) {
+    const [col, value] = config.filter.split('=').map((s) => s.trim());
+    items = items.filter((item) => (item[col] || '') === value);
+  }
   const noun = itemNoun(source);
   const state = readState(facets);
 
