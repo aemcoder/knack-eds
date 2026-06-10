@@ -364,6 +364,42 @@ main .section.gradient {
   }
 }
 
+/* case-study detail layout: article left, sidebar widgets right */
+main > .section.sidebar > div + div {
+  margin-top: 32px;
+}
+
+@media (width >= 900px) {
+  body.case-study main {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+    column-gap: 64px;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  body.case-study main > .section {
+    grid-column: 1;
+  }
+
+  body.case-study main > .section > div {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body.case-study main > .section:has(> .hero-wrapper) {
+    grid-column: 1 / -1;
+  }
+
+  body.case-study main > .section.sidebar {
+    grid-column: 2;
+    grid-row: 2 / 99;
+  }
+}
+
 .section.cta-banner,
 .section.trial-cta {
   background: linear-gradient(90deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
