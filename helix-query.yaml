@@ -13,19 +13,19 @@ indices:
     - /case-study/**
     target: /query-index.json
     properties:
-      title: &id001
+      title:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
-      description: &id002
+      description:
         select: head > meta[name="description"]
         value: attribute(el, "content")
-      image: &id003
+      image:
         select: head > meta[property="og:image"]
         value: attribute(el, "content")
-      template: &id004
+      template:
         select: head > meta[name="template"]
         value: attribute(el, "content")
-      lastModified: &id005
+      lastModified:
         select: none
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
   blog:
@@ -33,11 +33,21 @@ indices:
     - /blog/**
     target: /blog/query-index.json
     properties:
-      title: *id001
-      description: *id002
-      image: *id003
-      template: *id004
-      lastModified: *id005
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image"]
+        value: attribute(el, "content")
+      template:
+        select: head > meta[name="template"]
+        value: attribute(el, "content")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
       author:
         select: head > meta[name="author"]
         value: attribute(el, "content")
@@ -55,11 +65,21 @@ indices:
     - /video/**
     target: /video/query-index.json
     properties:
-      title: *id001
-      description: *id002
-      image: *id003
-      template: *id004
-      lastModified: *id005
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image"]
+        value: attribute(el, "content")
+      template:
+        select: head > meta[name="template"]
+        value: attribute(el, "content")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
       publication-date:
         select: head > meta[name="publication-date"]
         value: attribute(el, "content")
@@ -71,11 +91,21 @@ indices:
     - /templates/**
     target: /templates/query-index.json
     properties:
-      title: *id001
-      description: *id002
-      image: *id003
-      template: *id004
-      lastModified: *id005
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image"]
+        value: attribute(el, "content")
+      template:
+        select: head > meta[name="template"]
+        value: attribute(el, "content")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
       industries:
         select: head > meta[name="industries"]
         value: attribute(el, "content")
@@ -90,11 +120,21 @@ indices:
     - /integrations/**
     target: /integrations/query-index.json
     properties:
-      title: *id001
-      description: *id002
-      image: *id003
-      template: *id004
-      lastModified: *id005
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image"]
+        value: attribute(el, "content")
+      template:
+        select: head > meta[name="template"]
+        value: attribute(el, "content")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
       category:
         select: head > meta[name="category"]
         value: attribute(el, "content")
@@ -103,11 +143,21 @@ indices:
     - /case-study/**
     target: /case-study/query-index.json
     properties:
-      title: *id001
-      description: *id002
-      image: *id003
-      template: *id004
-      lastModified: *id005
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="description"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image"]
+        value: attribute(el, "content")
+      template:
+        select: head > meta[name="template"]
+        value: attribute(el, "content")
+      lastModified:
+        select: none
+        value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
       customer:
         select: head > meta[name="customer"]
         value: attribute(el, "content")
