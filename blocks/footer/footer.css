@@ -1,5 +1,5 @@
 footer {
-  background-color: var(--light-color);
+  background-color: var(--background-color);
   font-size: var(--body-font-size-xs);
 }
 
@@ -13,8 +13,147 @@ footer .footer p {
   margin: 0;
 }
 
+footer .footer > div > .section {
+  padding: 0;
+}
+
+/* pre-footer trial CTA band (fragment, nested section) */
+footer .footer .section.trial-cta {
+  border-radius: 16px;
+  padding: 48px 24px;
+  margin: 0 0 40px;
+}
+
+footer .footer .section.trial-cta h2 {
+  margin-top: 0;
+  font-size: var(--heading-font-size-l);
+}
+
+footer .footer .section.trial-cta p {
+  margin-bottom: 8px;
+}
+
+/* link columns */
+footer .footer > div > .section:has(> .default-content-wrapper > ul) {
+  border-top: 1px solid rgb(137 128 136 / 32%);
+  padding-top: 40px;
+}
+
+footer .footer > div > .section > .default-content-wrapper:has(> ul) {
+  display: grid;
+  gap: 16px;
+}
+
+footer .footer .icon-knack-logo {
+  width: auto;
+  height: 28px;
+}
+
+footer .footer .icon-knack-logo img {
+  width: auto;
+}
+
+footer .footer > div > .section > .default-content-wrapper > ul {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 24px;
+}
+
+footer .footer > div > .section > .default-content-wrapper > ul > li {
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  color: #595959;
+}
+
+footer .footer > div > .section > .default-content-wrapper > ul > li > p {
+  margin: 0;
+}
+
+footer .footer > div > .section > .default-content-wrapper > ul > li > ul {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer .footer > div > .section > .default-content-wrapper > ul > li > ul > li {
+  margin: 0 0 12px;
+  font-weight: 400;
+}
+
+footer .footer > div > .section > .default-content-wrapper > ul a {
+  color: var(--brand-black);
+  text-decoration: none;
+}
+
+footer .footer > div > .section > .default-content-wrapper > ul a:hover {
+  color: var(--brand-purple);
+  text-decoration: none;
+}
+
+/* brand column (logo, description, social) */
+footer .footer > div > .section:not(.trial-cta) > .default-content-wrapper > p {
+  margin: 0;
+  color: var(--brand-gray);
+  font-size: var(--body-font-size-xs);
+  font-weight: 500;
+  line-height: 1.85;
+  max-width: 280px;
+}
+
+footer .footer > div > .section:not(.trial-cta) > .default-content-wrapper > p .icon {
+  width: 20px;
+  height: 20px;
+}
+
+footer .footer > div > .section:not(.trial-cta) > .default-content-wrapper > p a {
+  display: inline-flex;
+  margin-right: 16px;
+}
+
+/* legal row */
+footer .footer > div > .section:last-child > .default-content-wrapper:not(:has(> ul)) {
+  margin-top: 48px;
+  text-align: center;
+}
+
+footer .footer > div > .section:last-child > .default-content-wrapper:not(:has(> ul)) p {
+  margin: 0 0 4px;
+  color: var(--brand-gray);
+  font-size: var(--body-font-size-xs);
+  max-width: unset;
+}
+
+footer .footer > div > .section:last-child > .default-content-wrapper:not(:has(> ul)) a {
+  color: var(--brand-gray);
+  display: inline;
+  margin-right: 0;
+}
+
+footer .footer > div > .section:last-child > .default-content-wrapper:not(:has(> ul)) a:hover {
+  color: var(--brand-purple);
+}
+
 @media (width >= 900px) {
   footer .footer > div {
     padding: 40px 32px 24px;
+  }
+
+  footer .footer > div > .section > .default-content-wrapper:has(> ul) {
+    grid-template-columns: minmax(220px, 3fr) 9fr;
+    column-gap: 48px;
+  }
+
+  footer .footer > div > .section > .default-content-wrapper:has(> ul) > p {
+    grid-column: 1;
+  }
+
+  footer .footer > div > .section > .default-content-wrapper:has(> ul) > ul {
+    grid-column: 2;
+    grid-row: 1 / span 8;
+    margin-top: 0;
+    grid-template-columns: repeat(5, 1fr);
   }
 }

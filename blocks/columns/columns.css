@@ -17,6 +17,7 @@
 
 .columns > div > .columns-img-col img {
   display: block;
+  border-radius: 12px;
 }
 
 @media (width >= 900px) {
@@ -29,5 +30,38 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+/* embedded video inside a column cell */
+.columns > div > div .video {
+  margin: 0;
+  max-width: unset;
+}
+
+/* stats variant: big brand numbers */
+.columns.stats > div {
+  text-align: center;
+}
+
+.columns.stats h3 {
+  margin: 0;
+  font-size: var(--heading-font-size-xxl);
+  color: var(--brand-purple);
+}
+
+.columns.stats p {
+  margin-top: 4px;
+  font-size: var(--body-font-size-s);
+  color: var(--brand-gray);
+}
+
+@media (width >= 900px) {
+  .columns > div {
+    gap: 64px;
+  }
+
+  .columns.stats > div {
+    gap: 32px;
   }
 }

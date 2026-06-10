@@ -1,5 +1,6 @@
 import {
   buildBlock,
+  getMetadata,
   loadHeader,
   loadFooter,
   decorateIcons,
@@ -29,6 +30,98 @@ function buildHeroBlock(main) {
     section.append(buildBlock('hero', { elems: [picture, h1] }));
     main.prepend(section);
   }
+}
+
+/**
+ * Builds the slug Yoast SEO generates for heading anchors on the source site
+ * (`h-` prefix, lowercase, punctuation stripped, `&nbsp;` kept as a word) so
+ * inbound deep links to imported articles keep working.
+ * @param {string} text The heading text
+ * @returns {string} The Yoast-compatible heading id
+ */
+function toYoastAnchor(text) {
+  const slug = text
+    .toLowerCase()
+    .replace(/\u00a0/g, ' nbsp ')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+  return `h-${slug}`;
+}
+
+/**
+ * Builds the article header (h1 + byline + hero image) for blog/video pages.
+ * @param {Element} main The container element
+ */
+function buildArticleHeader(main) {
+  if (main.querySelector('.article-header')) return;
+  const h1 = main.querySelector('h1');
+  if (!h1 || h1.closest('div[class]')) return;
+
+  let media = main.querySelector('picture, img');
+  // eslint-disable-next-line no-bitwise
+  if (media && !(h1.compareDocumentPosition(media) & Node.DOCUMENT_POSITION_FOLLOWING)) {
+    media = null;
+  }
+  if (media && (media.closest('div[class]') || media.closest('main > div') !== h1.closest('main > div'))) {
+    media = null;
+  }
+  if (!media) {
+    const ogImage = getMetadata('og:image');
+    if (ogImage) {
+      media = document.createElement('img');
+      media.src = ogImage;
+      media.alt = '';
+    }
+  }
+  if (media) {
+    const wrapper = media.closest('p') || media;
+    const elems = wrapper === media ? [media] : [wrapper];
+    const section = document.createElement('div');
+    section.append(buildBlock('article-header', [[{ elems: [h1] }], [{ elems }]]));
+    main.prepend(section);
+  } else {
+    const section = document.createElement('div');
+    section.append(buildBlock('article-header', [[{ elems: [h1] }]]));
+    main.prepend(section);
+  }
+}
+
+/**
+ * Assigns Yoast-compatible anchors to article headings and builds a table of
+ * contents block from the body h2s, rendered in a sidebar on large screens.
+ * @param {Element} main The container element
+ */
+function buildToc(main) {
+  main.querySelectorAll('h2, h3, h4').forEach((heading) => {
+    if (!heading.closest('div[class]')) heading.id = toYoastAnchor(heading.textContent);
+  });
+  if (main.querySelector('.toc')) return;
+  const firstH2 = [...main.querySelectorAll('h2')].find((h2) => !h2.closest('div[class]'));
+  if (!firstH2) return;
+  const section = firstH2.closest('main > div');
+  if (!section) return;
+  section.prepend(buildBlock('toc', ''));
+}
+
+/**
+ * Converts lone video link paragraphs in default content into click-to-load
+ * video blocks (links inside blocks are handled by the blocks themselves).
+ * @param {Element} main The container element
+ */
+function buildEmbedBlocks(main) {
+  const videoLink = /youtube\.com|youtu\.be|wistia/;
+  main.querySelectorAll('p > a[href]').forEach((a) => {
+    const p = a.parentElement;
+    if (p.closest('div[class]') || p.children.length !== 1) return;
+    if (!videoLink.test(a.href)) return;
+    const text = a.textContent.trim();
+    if (!text || p.textContent.trim() !== text) return;
+    p.replaceWith(buildBlock('video', { elems: [a] }));
+  });
 }
 
 /**
@@ -67,7 +160,15 @@ function buildAutoBlocks(main) {
       });
     }
 
-    buildHeroBlock(main);
+    const template = (getMetadata('template') || '').toLowerCase();
+    const isArticle = (template === 'blog' || template === 'video') && main.closest('body');
+    if (isArticle) {
+      buildArticleHeader(main);
+      buildToc(main);
+    } else {
+      buildHeroBlock(main);
+    }
+    buildEmbedBlocks(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
@@ -151,10 +252,26 @@ async function loadEager(doc) {
 }
 
 /**
+ * Opens links to /modals/ paths in a modal dialog.
+ * @param {Element} doc The container element
+ */
+function autolinkModals(doc) {
+  doc.addEventListener('click', async (e) => {
+    const origin = e.target.closest('a');
+    if (origin && origin.href && origin.href.includes('/modals/')) {
+      e.preventDefault();
+      const { openModal } = await import('../blocks/modal/modal.js');
+      openModal(origin.href);
+    }
+  });
+}
+
+/**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
+  autolinkModals(doc);
   loadHeader(doc.querySelector('header'));
 
   const main = doc.querySelector('main');
