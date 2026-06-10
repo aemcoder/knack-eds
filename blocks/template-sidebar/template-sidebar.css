@@ -1,0 +1,52 @@
+.template-sidebar {
+  font-size: var(--body-font-size-xs);
+}
+
+.template-sidebar .template-sidebar-row {
+  margin-bottom: 32px;
+}
+
+.template-sidebar .template-sidebar-label {
+  margin: 0 0 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--brand-gray-white);
+  font-size: var(--heading-font-size-xs);
+  font-weight: 600;
+  color: var(--brand-black);
+}
+
+.template-sidebar .template-sidebar-value ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.template-sidebar .template-sidebar-value li {
+  margin: 0 0 12px;
+}
+
+.template-sidebar .template-sidebar-value a {
+  color: var(--brand-black);
+  text-decoration: underline;
+}
+
+.template-sidebar .template-sidebar-value a:hover {
+  color: var(--brand-pink);
+}
+
+.template-sidebar .template-sidebar-install a.button {
+  border-color: var(--brand-purple);
+  background-color: var(--brand-purple);
+  border-radius: 8px;
+  padding: 0.7em 1.6em;
+  color: var(--background-color);
+  font-weight: 700;
+}
+
+.template-sidebar .template-sidebar-install a.button:hover,
+.template-sidebar .template-sidebar-install a.button:focus-visible {
+  border-color: var(--brand-dark-purple);
+  background-color: var(--brand-dark-purple);
+  color: var(--background-color);
+  text-decoration: none;
+}
