@@ -319,3 +319,52 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+main .section.light-grey {
+  background-color: var(--light-color);
+  margin: 0;
+  padding: 40px 0;
+}
+
+main .section.light-purple {
+  background-color: #f6ecf4;
+  margin: 0;
+  padding: 40px 0;
+}
+
+main .section.gradient {
+  background: linear-gradient(180deg, var(--brand-light-pink) 0%, var(--background-color) 100%);
+  margin: 0;
+  padding: 40px 0;
+}
+
+.section.cta-banner,
+.section.trial-cta {
+  background: linear-gradient(90deg, var(--brand-purple) 0%, var(--brand-pink) 100%);
+  margin: 0;
+  padding: 56px 0;
+  text-align: center;
+  color: white;
+}
+
+.section.cta-banner h2,
+.section.cta-banner h3,
+.section.trial-cta h2,
+.section.trial-cta h3 {
+  color: white;
+}
+
+.section.cta-banner a.button.primary,
+.section.trial-cta a.button.primary {
+  border-color: white;
+  background-color: white;
+  color: var(--brand-purple);
+}
+
+.section.cta-banner a.button.primary:hover,
+.section.cta-banner a.button.primary:focus-visible,
+.section.trial-cta a.button.primary:hover,
+.section.trial-cta a.button.primary:focus-visible {
+  border-color: var(--brand-light-pink);
+  background-color: var(--brand-light-pink);
+}

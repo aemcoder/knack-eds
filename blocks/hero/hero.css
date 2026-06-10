@@ -35,3 +35,99 @@
     padding: 40px 32px;
   }
 }
+
+/* without a background image, keep text readable on white */
+.hero:not(:has(picture, img)) h1 {
+  color: var(--text-color);
+}
+
+/* split variants: content left, media right (image-right, template, case-study) */
+.hero.image-right,
+.hero.template,
+.hero.case-study {
+  min-height: unset;
+  padding: 48px 24px;
+}
+
+.hero.image-right h1,
+.hero.template h1,
+.hero.case-study h1 {
+  margin-left: 0;
+  margin-right: 0;
+  color: var(--brand-black);
+}
+
+.hero.image-right picture,
+.hero.template picture,
+.hero.case-study picture {
+  position: static;
+  display: block;
+  line-height: 0;
+}
+
+.hero.image-right img,
+.hero.template img,
+.hero.case-study img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.hero.image-right > div,
+.hero.template > div,
+.hero.case-study > div {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* band backgrounds */
+.hero.image-right {
+  background: linear-gradient(180deg, var(--brand-light-pink) 0%, var(--background-color) 100%);
+}
+
+.hero.template {
+  background-color: var(--brand-light-pink);
+}
+
+.hero.case-study {
+  background-color: var(--background-color);
+}
+
+.hero.case-study img {
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgb(16 24 40 / 12%);
+}
+
+@media (width >= 900px) {
+  .hero.image-right,
+  .hero.template,
+  .hero.case-study {
+    padding: 64px 32px;
+  }
+
+  .hero.image-right > div > div,
+  .hero.template > div > div,
+  .hero.case-study > div > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 64px;
+    align-items: center;
+  }
+
+  .hero.image-right > div > div > *,
+  .hero.template > div > div > *,
+  .hero.case-study > div > div > * {
+    grid-column: 1;
+  }
+
+  .hero.image-right > div > div > picture,
+  .hero.image-right > div > div > p:has(picture, img),
+  .hero.template > div > div > picture,
+  .hero.template > div > div > p:has(picture, img),
+  .hero.case-study > div > div > picture,
+  .hero.case-study > div > div > p:has(picture, img) {
+    grid-column: 2;
+    grid-row: 1 / span 8;
+    margin: 0;
+  }
+}
