@@ -55,3 +55,84 @@
 .tabs .tabs-panel[aria-hidden='true'] {
   display: none;
 }
+
+/* hero variant: centered pill nav over a framed screenshot panel
+   (gradient backdrop comes from the section) */
+.tabs.hero .tabs-list {
+  justify-content: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 4px;
+  font-size: 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs.hero .tabs-list::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs.hero .tabs-list button {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  padding: 10px 24px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgb(130 21 112 / 8%);
+  color: var(--brand-dark-purple);
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tabs.hero .tabs-list button:hover {
+  color: var(--brand-pink);
+}
+
+.tabs.hero .tabs-list button[aria-selected='true'] {
+  border: 2px solid var(--brand-pink);
+  background-color: white;
+  color: var(--brand-pink);
+}
+
+.tabs.hero .tabs-panel {
+  margin-top: 0;
+  border: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.tabs.hero .tabs-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs.hero .tabs-panel p {
+  margin: 0;
+}
+
+.tabs.hero .tabs-panel img {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgb(130 21 112 / 18%);
+}
+
+@media (width >= 900px) {
+  .tabs.hero .tabs-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    font-size: 17px;
+    overflow: visible;
+  }
+
+  .tabs.hero .tabs-list button {
+    padding: 11px 26px;
+  }
+
+  .tabs.hero .tabs-panel img {
+    border-radius: 16px;
+  }
+}
