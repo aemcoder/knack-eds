@@ -1,0 +1,40 @@
+[     294ms] [LOG] JQMIGRATE: Migrate is installed, version 3.4.1 @ http://localhost:3001/wp-includes/js/jquery/jquery-migrate.min.js:1
+[     375ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ http://wp-content/uploads/2023/11/Customer-Portal.svg:0
+[     566ms] [ERROR] Error initializing web interactives TypeError: Cannot read properties of undefined (reading 'then')
+    at Fe.fetch (https://js.hubspot.com/web-interactives-embed.js:1:20541)
+    at Fe.fetchConfigs (https://js.hubspot.com/web-interactives-embed.js:1:18667)
+    at Fe.init (https://js.hubspot.com/web-interactives-embed.js:1:19425)
+    at Dn.init (https://js.hubspot.com/web-interactives-embed.js:1:94053)
+    at Gn (https://js.hubspot.com/web-interactives-embed.js:1:97691) @ https://js.hubspot.com/web-interactives-embed.js:0
+[    1031ms] [WARNING] [Meta pixel] 225800584459378 is unavailable on this website due to it's traffic permission settings. Go to https://www.facebook.com/business/help/572690630080597 to learn more. @ https://connect.facebook.net/en_US/fbevents.js:183
+[    1885ms] Uncaught TypeError: Cannot read properties of undefined (reading 'then')
+    at K (https://bzrcdn.openai.com/sdk/oaiq.min.js:0:9473)
+    at <anonymous> (https://bzrcdn.openai.com/sdk/oaiq.min.js:0:6899)
+[    3065ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[    3068ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[    3366ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[    3368ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[    3491ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[    3491ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[    3509ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[    3510ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[    3771ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[    3773ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[    3789ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[    3790ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[    3964ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[    3965ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[    4004ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[    4005ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[    4194ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[    4196ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[    5464ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[    5465ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[    5539ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[    5541ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[    5839ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[    5840ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[   16280ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[   16281ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0
+[   21309ms] [ERROR] Access to XMLHttpRequest at 'https://www.knack.com/wp-admin/admin-ajax.php' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3001/?host=https://www.knack.com:0
+[   21309ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://www.knack.com/wp-admin/admin-ajax.php:0

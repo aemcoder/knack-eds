@@ -1,0 +1,17 @@
+:root {
+  /* knack brand palette (from knacktheme :root on www.knack.com) */
+  --brand-pink: #ff349a;
+  --brand-dark-pink: rgb(255 52 154 / 88%);
+  --brand-light-pink: #f4dcf0;
+  --brand-purple: #982a86;
+  --brand-dark-purple: #821570;
+  --brand-orange: #fa816e;
+  --brand-light-orange: #faf4f3;
+  --brand-black: #101828;
+  --brand-gray: #898088;
+  --brand-gray-white: #e8e8e8;
+  --brand-disabled: #d4aacd;
+
+  /* layout */
+  --section-padding: 80px;
+}
